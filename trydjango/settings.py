@@ -22,14 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get('DEBUG')) == "1" # 1 == True
+DEBUG = str(os.environ.get('DEBUG')) == "0" # 1 == True
 
 ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
 
-ALLOWED_HOSTS = 'try-django-3-2-fvrz7.ondigitalocean.app'
-# ALLOWED_HOSTS = []
-# if not DEBUG:
-#     ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
+#ALLOWED_HOSTS = 'try-django-3-2-fvrz7.ondigitalocean.app'
+ALLOWED_HOSTS = []
+if not DEBUG:
+    ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
 
 # Application definition
 # python manage.py makemigrations
